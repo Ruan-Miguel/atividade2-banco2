@@ -25,10 +25,11 @@ document.getElementsByTagName('form')[0].addEventListener('submit', async functi
 
 })
 
-let svg
+
 
 function generate_svg(jsonSvg, jsonView) {
-  svg = '<svg viewBox="'
+  center = document.createElement('center')
+  let svg = '<svg style="height: 48vw" viewBox="'
   svg += jsonView
   svg += '"><path d="'
   svg += jsonSvg
@@ -37,5 +38,7 @@ function generate_svg(jsonSvg, jsonView) {
 
   console.log(svg)
 
-  document.getElementsByTagName('body')[0].innerHTML += svg
+  center.innerHTML += svg
+
+  document.getElementsByTagName('body')[0].appendChild(center)
 }
